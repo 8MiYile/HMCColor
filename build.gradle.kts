@@ -36,8 +36,8 @@ dependencies {
     compileOnly("com.mineinabyss:geary-papermc:0.32.6")
 
     // CraftEngine
-    compileOnly("net.momirealms:craft-engine-core:0.0.49")
-    compileOnly("net.momirealms:craft-engine-bukkit:0.0.49")
+    compileOnly("net.momirealms:craft-engine-core:26.7.4")
+    compileOnly("net.momirealms:craft-engine-bukkit:26.7.4")
 
     compileOnly("com.mineinabyss:idofront-di:$idofrontVersion")
     compileOnly("com.mineinabyss:idofront-config:$idofrontVersion")
