@@ -1,0 +1,25 @@
+name: HMCColor
+version: "${version}"
+main: com.hibiscusmc.hmccolor.HMCColor
+loader: com.hibiscusmc.hmccolor.HMCColorPluginLoader
+bootstrapper: com.hibiscusmc.hmccolor.HMCColorBootstrap
+api-version: "1.21"
+authors: [ boy0000 ]
+
+dependencies:
+  server:
+    Nexo:
+      required: false
+      join-classpath: true
+    ItemsAdder:
+      required: false
+      join-classpath: true
+    MythicCrucible:
+      required: false
+      join-classpath: true
+    Geary:
+      required: false
+      join-classpath: true
+    CraftEngine:
+      required: false
+      join-classpath: true

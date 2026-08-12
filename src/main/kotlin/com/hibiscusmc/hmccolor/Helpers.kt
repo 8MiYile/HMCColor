@@ -31,7 +31,7 @@ fun String.itemsAdderItem() = if (Plugins.isEnabled("ItemsAdder")) CustomStack.g
 fun ItemStack.isCraftEngineItem() = Plugins.isEnabled("CraftEngine") && CraftEngineItems.isCustomItem(this)
 fun ItemStack.craftEngineID(): String? = if (Plugins.isEnabled("CraftEngine")) CraftEngineItems.getCustomItemId(this)?.toString() else null
 fun String.isCraftEngineItem() = Plugins.isEnabled("CraftEngine") && runCatching { CraftEngineItems.byId(Key.of(this)) != null }.getOrDefault(false)
-fun String.craftEngineItem(): ItemStack? = if (Plugins.isEnabled("CraftEngine")) CraftEngineItems.byId(Key.of(this))?.buildItemStack() else null
+fun String.craftEngineItem(): ItemStack? = if (Plugins.isEnabled("CraftEngine")) CraftEngineItems.byId(Key.of(this))?.buildBukkitItem() else null
 
 val gearyItems get() = gearyPaper.worldManager.global.getAddon(ItemTracking)
 val globalGeary get() = gearyPaper.worldManager.global
