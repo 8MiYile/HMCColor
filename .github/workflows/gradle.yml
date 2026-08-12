@@ -40,7 +40,6 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v5
       with:
-        gradle-home-cache-cleanup: true
         cache-read-only: ${{ github.event_name == 'pull_request' }}
 
     - name: Grant execute permission for gradlew
@@ -70,6 +69,7 @@ jobs:
           build/reports/tests/
           build/test-results/
         retention-days: 7
+        if-no-files-found: ignore
 
   dependency-submission:
     # Only run on push to main/master branch and if dependency graph is enabled
