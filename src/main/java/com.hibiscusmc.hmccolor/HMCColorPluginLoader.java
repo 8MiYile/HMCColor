@@ -30,11 +30,14 @@ public class HMCColorPluginLoader implements PluginLoader {
 
     static {
 
-        if (Version.atleast("1.21.6"))
-            IDOFRONT_VERSION = "0.27.0-dev.4";
-        else if (Version.atleast("1.21.4"))
+        if (Version.atleast("1.21.6")) {
+            // 0.27.0-dev.4 referenced DataComponentTypes.HIDE_TOOLTIP which was removed in 1.21.6+ (merged into TOOLTIP_DISPLAY), causing NoSuchFieldError
+            IDOFRONT_VERSION = "1.1.5";
+        } else if (Version.atleast("1.21.4")) {
             IDOFRONT_VERSION = "0.26.6";
-        else IDOFRONT_VERSION = "0.25.24";
+        } else {
+            IDOFRONT_VERSION = "0.25.24";
+        }
 
         libraries.add("org.jetbrains.kotlin:kotlin-stdlib:2.2.0");
         libraries.add("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0");
